@@ -1,0 +1,57 @@
+[
+    {
+      "id": 1,
+      "brandno": "13",
+      "brandname": "Breidecker",
+      "image": "./images/hunters.png",
+      "bottle": 14.90,
+      "casePrice": 204.06,
+      "type": "White"
+    },
+    {
+        "id": 2,
+        "brandno": "13",
+        "brandname": "Breidecker",
+        "image": "./images/hunters.png",
+        "bottle": 17.90,
+        "casePrice": 204.06,
+        "type": "Red"
+      },
+      {
+        "id": 3,
+        "brandno": "13",
+        "brandname": "Breidecker",
+        "image": "./images/hunters.png",
+        "bottle": 13.90,
+        "casePrice": 204.06,
+        "type": "White"
+      },
+      {
+        "id": 4,
+        "brandno": "13",
+        "brandname": "Breidecker",
+        "image": "./images/hunters.png",
+        "bottle": 173.90,
+        "casePrice": 204.06,
+        "type": "Sparkling"
+      },
+      {
+        "id": 5,
+        "brandno": "13",
+        "brandname": "Breidecker",
+        "image": "./images/hunters.png",
+        "bottle": 1.90,
+        "casePrice": 204.06,
+        "type": "Red"
+      },
+      {
+        "id": 6,
+        "brandno": "13",
+        "brandname": "Breidecker",
+        "image": "./images/hunters.png",
+        "bottle": 90.90,
+        "casePrice": 204.06,
+        "type": "Red"
+      } 
+  ]
+  

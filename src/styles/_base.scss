@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@700&display=swap');
+
+$bp-largest: 75em;// 1200/16 = 118em
+$bp-large: 68.75em; // 1100/16 = 68.75em
+$bp-medium: 56.25em;//900/16 = 56.25em
+$bp-small: 37.5em;//600/16 = 37.5em
+  
+*{
+      margin: 0;
+      padding:0;
+}
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+  
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;//1 rem = 10px , 10px /16px =62.5%;
+    font-family: 'Cardo', serif;    
+
+    @media only screen and(max-width: $bp-small){
+        font-size: 50%;
+    }
+}
+body{
+    font-family: 'Cardo', serif;
+    font-weight: 400;
+    line-height: 1.6;
+    background-color: #fff;
+    color:#000000;
+}

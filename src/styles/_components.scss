@@ -1,0 +1,340 @@
+//////////////////////////////////
+//Tags
+.tags{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    padding: 1rem;
+
+    &__el{
+        background-color: $color-grey-dark;
+        border: none;
+        color: $color-dark;
+        padding: .75rem;
+        font-size: 1.25rem;
+        cursor: pointer;
+
+        &:hover{
+            outline: none;
+            border: none;
+            background-color: $color-dark;
+            color: #fff;
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+}
+
+///////////////////////////////////////////////
+///Show
+.show{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    padding: 1rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+
+    &__me{
+        color: $color-dark;
+    }
+    &__all{
+        color: $color-grey-dark;
+        padding: .2rem;
+
+        &:hover{
+            outline: none;
+            border: none;
+            background-color: $color-dark;
+            color: #fff;
+            padding: .2rem ;
+        }
+    }
+}
+
+///////////////////////////////////////////////////
+/// Total
+
+.total{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 45%;
+
+    &__calc{
+        font-weight: 600;
+
+        @media only screen and(max-width: $bp-small){
+            display: none;
+        }
+    }
+    &__cash{
+        font-size: 2rem;
+        font-weight: 550;
+
+        @media only screen and(max-width: $bp-small){
+            position: absolute;
+            width: 100%;
+            margin-top: 1.5rem;
+            font-weight: 300;
+            font-size: 2.5rem;
+            font-family: 'Cardo', serif;    
+        }
+    }
+}
+
+////////////////////////////////////////////////////
+////BTNS
+
+.btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40%;
+
+    @media only screen and(max-width: $bp-small){
+        flex-direction: column-reverse;
+        margin-top: 2rem;
+    }
+
+    &__empty{
+        background-color: $color-grey-dark;
+        color: $color-dark;
+        cursor: pointer;
+
+        @media only screen and(max-width: $bp-small){
+            margin-top: 2rem;
+        }
+    }
+
+    &__check{
+        background-color: $color-dark;
+        color: #fff;
+        cursor: pointer;
+
+    }
+}
+
+
+.btn-inline{
+    border:none;
+    outline:none;
+    padding: .5rem;
+}
+
+//////////////////////////////////////////
+///Order
+.order{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    padding: 1rem;
+
+    &__text{
+        margin-right: -2.2rem;
+        font-size: 1.25rem;
+    }
+    &__el{ 
+        cursor: pointer; 
+        background-color: $color-grey-dark;
+        border: none;
+        color: $color-dark;
+        padding: .75rem;
+        font-size: 1.25rem;
+
+        &:hover{
+            outline: none;
+            border: none;
+            background-color: $color-dark;
+            color: #fff;
+        }
+    }
+}
+
+
+///////////////////////////////////////////
+///Quantity
+
+.quantity{
+    display: flex;
+    flex-direction: column;
+    height: 20%;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 700;
+
+    @media only screen and(max-width: $bp-small){
+        flex-direction: row;
+        position: relative;
+        margin-top: -2rem;
+        margin-left: 2rem;
+        font-weight:300;
+
+    }
+    &__txt{
+        @media only screen and (max-width: $bp-small){
+            margin-left: 1rem;
+        }
+    }
+}
+/////////////////////////////////////////
+///Delivery
+
+.delivery{
+    font-size: 1.5rem;
+
+    @media only screen and(max-width: $bp-small){
+      display: none;
+    }
+}
+//////////////////////////////////////
+///Shop
+.shop{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+/////////////////////////////////////////
+//Item
+.item{
+    display: flex;
+    flex: 0 0 30%;
+    font-size: 1.2rem;
+    width: 100%;
+    padding-bottom: 9rem;
+    padding-top: 9rem;
+    border-bottom: 1px dotted;
+
+    &__image{
+      height: 20rem;
+    }
+    @media only screen and(max-width: $bp-small){
+        flex: 0 0 100%;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+//////////////////////////////////////////////
+///Item Content
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: .75rem;
+    margin-left: -3rem;
+    align-items: flex-start;
+    flex: 0 0 60%;
+
+    &__brandno{
+       margin-left: 1rem;
+       margin-top: -1.2rem ;
+       margin-bottom: -2rem;
+       font-size: 5.5rem;
+       color: $color-grey-dark;
+       
+       @media only screen and(max-width: $bp-small){
+          font-weight: 550;
+       }
+    }
+
+    &__brandname{
+        margin-left: 1.2rem;
+        color: $color-grey-dark;
+        margin-bottom: 1rem;
+
+    }
+
+    &__pricing{
+        display: flex;
+        width: 100%;
+        align-self: center;
+        justify-content: center;
+        margin-bottom: .75rem;
+        margin-top: 1.75rem;
+    }
+    &__btns{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        // margin: 1rem;
+    
+        @media only screen and(max-width: $bp-small){
+            margin-left: 1.25rem;
+        }
+    }
+}
+
+.bottle{
+    border-right: 1px dotted #000000;
+}
+
+.case{
+    margin-left: 2rem;
+}
+
+.form{
+    width: 2rem;
+    height: 2rem;
+    margin-right: .8rem;
+}
+
+///Individual Forms input
+.inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 0 0 40%;
+
+    &__form{
+        display: flex;
+    }
+
+}
+
+//////////////////////////////
+//Btns
+.btn-detail{
+    border: none;
+    background-color: $color-grey-dark;
+    color: $color-dark;
+    padding: .25rem;
+    flex: 0 0 40%;
+    margin-left: -2.5rem;
+
+    @media only screen and(max-width: $bp-small){
+        padding: .5rem 1.25rem;
+    }
+}
+
+.btn-add{
+    border: none;
+    background-color: $color-dark;
+    color: #fff;
+    padding: .5rem;
+    margin-left: .45rem;
+
+    @media only screen and(max-width: $bp-small){
+        padding: .5rem 2rem;
+    }
+
+}
+
+.view{
+    display: none;
+
+    @media only screen and(max-width: $bp-small){
+        display: block;
+        color: #000000;
+        font-size: 1.5rem;
+        margin-top: -2rem;
+        margin-left: -3rem;
+        border-bottom:1px solid black ;
+    }
+
+}
