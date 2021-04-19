@@ -10,15 +10,15 @@ const ItemBoard = ({
     }
 }) => {
     const addDetails = () => {
-        // const itemDetails = document.querySelectorAll('.detailedDiv');
-        function get_id(clicked_id){
-            alert(clicked_id);
-        }
-        
+        const itemDetails = document.querySelectorAll('.detailedDiv');
+       
         // itemDetails.forEach((itemDetail) => {
+        //     itemDetail.style.display="block";
         // })
 
-      
+        for(let i = 0; i < 8; i++){
+            itemDetails[i].style.display="block";
+        }
     };
     const removeDetails = () => {
         const itemDetail = document.querySelectorAll('.detailedDiv');
@@ -28,9 +28,9 @@ const ItemBoard = ({
         }
     };
     return (
-        <div id={`${no}`} className="item" onClick="get_id(this.id)">
+        <div id={`${no}`} className="item">
             <div className="detailedDiv">
-                <span className="detailedDiv__name">{name}</span>
+                {/* <span className="detailedDiv__name">{name}</span> */}
                 <span className="detailedDiv__details">{details}</span>
                 <button className="detailedDiv__back" onClick={removeDetails}>Back</button>
             </div>
