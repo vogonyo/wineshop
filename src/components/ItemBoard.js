@@ -9,30 +9,17 @@ const ItemBoard = ({
         details
     }
 }) => {
-    const addDetails = () => {
-        const itemDetails = document.querySelectorAll('.detailedDiv');
-       
-        // itemDetails.forEach((itemDetail) => {
-        //     itemDetail.style.display="block";
-        // })
-
-        for(let i = 0; i < 8; i++){
-            itemDetails[i].style.display="block";
-        }
+    const addDetails = (id) => {
+       document.getElementById(`${id}`).style.display="block";
     };
-    const removeDetails = () => {
-        const itemDetail = document.querySelectorAll('.detailedDiv');
-
-        for(let i = 0; i < 8; i++){
-            itemDetail[i].style.display="none";
-        }
+    const removeDetails = (id) => {
+        document.getElementById(`${id}`).style.display="none";
     };
     return (
-        <div id={`${no}`} className="item">
-            <div className="detailedDiv">
-                {/* <span className="detailedDiv__name">{name}</span> */}
+        <div className="item">
+            <div id={`${no}`} className="detailedDiv">
                 <span className="detailedDiv__details">{details}</span>
-                <button className="detailedDiv__back" onClick={removeDetails}>Back</button>
+                <button className="detailedDiv__back" onClick={() => removeDetails(no)}>Back</button>
             </div>
             <img className="item__image" src={image} alt={`${name}`} />
             <div className="content">
@@ -55,7 +42,7 @@ const ItemBoard = ({
                   </div>
                 </span>
                 <span className="content__btns">
-                    <button className="btn-detail" onClick={addDetails}>Details</button>
+                    <button className="btn-detail" onClick={()=> addDetails(no)}>Details</button>
                     <button className="btn-add">Add To Cart</button>
                 </span>
             </div>
