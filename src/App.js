@@ -1,15 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import './App.scss';
 import ItemBoard from './components/ItemBoard';
-import data from './assets/data.json';
+import data from './assets/wine-shop.json';
+// import data from './assets/data.json';
+
+// import data from './assets/wine-shop.json';
 
 function App() {
   const tags = ['White', 'Red', 'Sparkling'];
   const [products, setProducts] = useState([]);
   const [parameters, setParameters] = useState([]);
+  const [cart, setCart] = useState([]);
+  const [cartTotal, setCartTotal] = useState(0);
 
 
   useEffect(() => setProducts(data), []);
+  useEffect(() => { total(); }, [cart]);
+
+  const total = () => {
+    let totalVal = 0;
+    for (let i = 0; i < cart.length; i++) {
+      totalVal += cart[i].price;
+    }
+    setCartTotal(totalVal);
+  };
+
+  const addToCart = (el) => {
+      setCart([...cart, el]);
+  };
+
+  const removeFromCart = (el) => {
+    let hardCopy = [...cart];
+    hardCopy = hardCopy.filter((cartItem) => cartItem.id !== el.id);
+    setCart(hardCopy);
+  };
 
   const filterFunc = ({type}) => {
     if (parameters.length === 0) { return true; }
@@ -30,7 +54,7 @@ function App() {
   const filteredProducts = products.filter(filterFunc);
   
   function comparePrices(a, b){
-    return b.bottle - a.bottle;
+    return b.cost.bottle - a.cost.bottle;
   }
 
   const orderProducts = () => {
@@ -94,7 +118,7 @@ function App() {
               filteredProducts.map(product => (
                 <ItemBoard 
                   product={product} 
-                  key={product.id}  
+                  key={product.no}  
                 />
               ))
             )
