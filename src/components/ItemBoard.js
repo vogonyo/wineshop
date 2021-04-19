@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ItemBoard = ({ 
+const ItemBoard = ({
     product: {
         no,
         name,
@@ -9,53 +9,41 @@ const ItemBoard = ({
         details
     }
 }) => {
-    const addDetails = () => {
-        const itemDetails = document.querySelectorAll('.detailedDiv');
-       
-        // itemDetails.forEach((itemDetail) => {
-        //     itemDetail.style.display="block";
-        // })
-
-        for(let i = 0; i < 8; i++){
-            itemDetails[i].style.display="block";
-        }
+    const addDetails = (id) => {
+        document.getElementById(`${id}`).style.display = "block";
     };
-    const removeDetails = () => {
-        const itemDetail = document.querySelectorAll('.detailedDiv');
-
-        for(let i = 0; i < 8; i++){
-            itemDetail[i].style.display="none";
-        }
+    const removeDetails = (id) => {
+        document.getElementById(`${id}`).style.display = "none";
     };
     return (
-        <div id={`${no}`} className="item">
-            <div className="detailedDiv">
+        <div className="item">
+            <div className="detailedDiv" id={`${no}`}>
                 {/* <span className="detailedDiv__name">{name}</span> */}
                 <span className="detailedDiv__details">{details}</span>
-                <button className="detailedDiv__back" onClick={removeDetails}>Back</button>
+                <button className="detailedDiv__back" onClick={() => removeDetails(no)}>Back</button>
             </div>
             <img className="item__image" src={image} alt={`${name}`} />
             <div className="content">
-                    <span className="content__brandno">{no}</span>
-                    <span className="content__brandname">{name}</span>
+                <span className="content__brandno">{no}</span>
+                <span className="content__brandname">{name}</span>
                 <span className="content__pricing">
-                  <div className="inputs bottle">
+                    <div className="inputs bottle">
                         <span className="inputs__text">Bottle</span>
                         <span className="inputs__price">${cost.bottle}</span>
                         <span className="inputs__form">
-                            <input className="form" type="text"/> QTY
+                            <input className="form" type="text" /> QTY
                         </span>
-                  </div>
-                  <div className="inputs case">
+                    </div>
+                    <div className="inputs case">
                         <span className="inputs__text">Case</span>
                         <span className="inputs__price">${cost.case}</span>
                         <span className="inputs__form">
-                            <input className="form" type="text"/><span> QTY</span>
+                            <input className="form" type="text" /><span> QTY</span>
                         </span>
-                  </div>
+                    </div>
                 </span>
                 <span className="content__btns">
-                    <button className="btn-detail" onClick={addDetails}>Details</button>
+                    <button className="btn-detail" onClick={() => addDetails(no)}>Details</button>
                     <button className="btn-add">Add To Cart</button>
                 </span>
             </div>
